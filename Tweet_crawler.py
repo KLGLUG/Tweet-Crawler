@@ -1,3 +1,4 @@
+#importing required libraries
 import twitter
 import json
 import csv
@@ -5,19 +6,23 @@ import re
 import time
 from urllib.parse import unquote
 
-query = input("Hashtag:")
-
-consumer_key = 'A0PIowPC2WDf965TSlw5THleS'
-consumer_secret = 'bECpVLYsu3aINGRSqPFkyD2xE387I5Yw6XayabXVntFEvNV4Lr'
-access_token = '2348573101-ltHO8PVdOH9TOecf6F448w9D0jSn3riaf4Xdpgu'
-access_token_secret = 'y1eGbgZwgxT8hmvqjiVymMDBVHjeWp0SK4ghYE671he3D'
+#Twitter API credentials
+consumer_key = ''
+consumer_secret = ''
+access_token = ''
+access_token_secret = ''
 
 auth = twitter.oauth.OAuth(access_token, access_token_secret,consumer_key,consumer_secret)
 twitter_api = twitter.Twitter(auth=auth)
+#input Hashtag
+query = input("Hashtag:")
+#number of tweets required as count
 max_count = int(input("Count:"))
+
 search_results = {}
 search_results["statuses"] = []
 search_results["search_metadata"] = {}
+#searching twitter API
 search_results = twitter_api.search.tweets(q=query,count=max_count,lang = 'en')
 statuses = search_results['statuses']
 while(1):
@@ -37,8 +42,8 @@ while(1):
     statuses += search_results['statuses']
 with open(query+str(int(time.time()))+'.csv', 'w') as csv_file:
     writer = csv.writer(csv_file)
-    writer.writerow(["Tweet", "Emotion"])
+    writer.writerow(["Tweet"])
     for status in statuses:
-        if 'RT' not in status["text"]:
-            status["text"] = re.sub(r"(?:\@|https?\://)\S+", "", status["text"])
-            writer.writerow([status["text"],""])
+        if 'RT' not in status["text"]:                                                #omiting the retweets
+            status["text"] = re.sub(r"(?:\@|https?\://)\S+", "", status["text"])      #removing hyperlinks and @tags
+            writer.writerow([status["text"],""])                                      #writing into csv file
