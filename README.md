@@ -25,3 +25,4 @@ $ pip3 install twitter
 $ python3 Tweet_crawler.py
 
 ```
+IF any error occured while running the code then uninstall the twitter library and just have the folder avilable in the page and place it in the reprositery where you would like to run the script this helps to clear all errors in twitter library . 
