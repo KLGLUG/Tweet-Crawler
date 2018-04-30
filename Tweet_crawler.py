@@ -1,5 +1,8 @@
 ;;; Tweet Crawler
+;;; Copyright © 2018 Uday Kiran Kondreddy <udaykiran.kondreddy@gmail.com>
+;;; Copyright © 2018 Naga Teja Mamidapaka <nagatejam@gmail.com>
 ;;; Copyright © 2018 Farhaan Ahmed Shaik <farhaanfsk@gmail.com>
+;;; Copyright © 2018 Subhani Kurra <subhanikurra4@gmail.com>
 ;;;
 ;;; This file is part of Tweet Crawler.
 ;;;
@@ -25,10 +28,10 @@ import time
 from urllib.parse import unquote
 
 #Twitter API credentials
-consumer_key = ''
-consumer_secret = ''
-access_token = ''
-access_token_secret = ''
+consumer_key = 'XXXXXXXXXXXXXXX'
+consumer_secret = 'XXXXXXXXXXXXXXXX'
+access_token = 'XXXXXXXXXXXXXXXXXXXXXXX'
+access_token_secret = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXx'
 
 auth = twitter.oauth.OAuth(access_token, access_token_secret,consumer_key,consumer_secret)
 twitter_api = twitter.Twitter(auth=auth)
