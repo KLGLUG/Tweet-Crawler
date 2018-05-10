@@ -3,6 +3,7 @@
 ;;; Copyright © 2018 Naga Teja Mamidapaka <nagatejam@gmail.com>
 ;;; Copyright © 2018 Farhaan Ahmed Shaik <farhaanfsk@gmail.com>
 ;;; Copyright © 2018 Subhani Kurra <subhanikurra4@gmail.com>
+;;; Copyright © 2018 Yashwant Bezawada <yashwant_b@me.com>
 ;;;
 ;;; This file is part of Tweet Crawler.
 ;;;
